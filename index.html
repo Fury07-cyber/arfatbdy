@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>🎉 Happy Birthday Arfat 🎂</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: "Poppins", sans-serif;
+      color: white;
+      background: radial-gradient(circle at 50% 20%, #6a00ff, #000);
+      position: relative;
+      touch-action: none;
+    }
+
+    h1, h2, h3 { text-align: center; z-index: 3; padding: 0 10px; }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      text-shadow: 0 0 25px #ffb6f3, 0 0 60px #ff66cc;
+      animation: floatText 3s ease-in-out infinite alternate;
+    }
+    h2 {
+      font-size: clamp(1rem, 4vw, 1.4rem);
+      color: #ffe6fa;
+      text-shadow: 0 0 15px #ffb6f3;
+    }
+    h3 {
+      font-size: clamp(1rem, 3.5vw, 1.3rem);
+      color: #80ffea;
+      text-shadow: 0 0 15px #80ffea, 0 0 25px #00ffff;
+      animation: floatText 3s ease-in-out infinite alternate;
+      margin-bottom: 30px;
+    }
+
+    @keyframes floatText {
+      from { transform: translateY(0); }
+      to { transform: translateY(-8px); }
+    }
+
+    /* Waves behind */
+    .wave {
+      position: absolute;
+      width: 300%;
+      height: 100%;
+      white-space: nowrap;
+      font-size: clamp(2rem, 8vw, 4rem);
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00, #ff6600, #ff00ff);
+      background-size: 600%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      opacity: 0.12;
+      z-index: 0;
+      line-height: 1.4;
+      animation: moveWave 8s linear infinite, colorShift 6s linear infinite;
+      text-align: center;
+    }
+    .wave:nth-child(1) { top: 25%; }
+    .wave:nth-child(2) { top: 50%; }
+    .wave:nth-child(3) { top: 75%; }
+
+    @keyframes moveWave {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes colorShift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    /* Cake and glowing candle */
+    .cake-container {
+      position: relative;
+      font-size: clamp(5rem, 15vw, 8rem);
+      filter: drop-shadow(0 0 25px #ff66cc);
+      animation: bounce 2s ease-in-out infinite;
+      z-index: 3;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .flame {
+      position: absolute;
+      top: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 18px;
+      height: 18px;
+      background: radial-gradient(circle, #ffff99, #ff9900, #ff3300);
+      border-radius: 50%;
+      box-shadow: 0 0 25px 10px rgba(255, 150, 0, 0.7);
+      animation: flicker 0.25s infinite alternate;
+    }
+    @keyframes flicker {
+      0% { transform: translateX(-50%) scale(1); opacity: 1; }
+      100% { transform: translateX(-50%) scale(1.15); opacity: 0.85; }
+    }
+
+    /* Floating particles */
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wave">🎉 HAPPY BIRTHDAY ARFAT 🎉 HAPPY BIRTHDAY ARFAT 🎉</div>
+  <div class="wave">🎂 HAPPY BIRTHDAY ARFAT 🎂 HAPPY BIRTHDAY ARFAT 🎂</div>
+  <div class="wave">🎊 HAPPY BIRTHDAY ARFAT 🎊 HAPPY BIRTHDAY ARFAT 🎊</div>
+
+  <h1>🎉 Happy Birthday, Arfat! 🎂</h1>
+  <h2>Wishing you joy, laughter, and light today!</h2>
+  <h3>💫 From your friend, <span style="color:#00ffff; text-shadow:0 0 20px #00ffff;">Fury 💥</span></h3>
+
+  <div class="cake-container">
+    🎂
+    <div class="flame"></div>
+  </div>
+
+  <script>
+    function createParticle() {
+      const elem = document.createElement("div");
+      const symbols = ["✨", "💖", "💞", "💫", "⭐", "🌟"];
+      elem.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+      elem.style.position = "absolute";
+      elem.style.left = Math.random() * window.innerWidth + "px";
+      elem.style.top = "100vh";
+      elem.style.fontSize = Math.random() * 20 + 10 + "px";
+      elem.style.animation = "floatUp 6s ease-in forwards";
+      elem.style.zIndex = "2";
+      elem.style.opacity = Math.random() * 0.9 + 0.1;
+      document.body.appendChild(elem);
+      setTimeout(() => elem.remove(), 6000);
+    }
+    setInterval(createParticle, 100);
+  </script>
+</body>
+</html>
